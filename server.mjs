@@ -67,7 +67,6 @@ app.get("/emotion/:text", (req, res) => {
 	child.exec(
 		`python3 main.py --text ${formattedText}`,
 		(error, stdout, stderr) => {
-			// console.log(error, stdout, stderr);
 			if (stderr) {
 				console.error("error id ", stderr);
 				return res.status(500).json({

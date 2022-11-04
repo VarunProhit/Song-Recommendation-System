@@ -32,16 +32,11 @@ const Dashboard = ({ code }) => {
 	const getEmotionByText = async (text) => {
 		console.log(text);
 		try {
-			// const res = await axios.get(
-			// 	`http://localhost:8080/text?text=${aboutToday}`
-			// );
-			const res = await axios.post("http://localhost:8000/", {
-				text: text,
-			});
-			console.log(res);
-			console.log("getEmotionByText", res.data);
-			setGenre(res.data);
-			return res.data;
+			const res = await axios.get(
+				`http://localhost:4000/emotion/${text}`
+			);
+			setGenre(res.data.emotion);
+			return res.data.emotion;
 		} catch (error) {
 			console.error(error);
 			return error?.response?.data;
