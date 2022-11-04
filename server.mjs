@@ -64,22 +64,24 @@ app.post("/refresh", (req, res) => {
 app.get("/emotion/:text", (req, res) => {
 	let text = req.params.text;
 	let formattedText = formatText(text);
+	console.log(formattedText)
 	child.exec(
-		`python3 main.py --text ${formattedText}`,
+		`python main.py --text ${formattedText}`,
 		(error, stdout, stderr) => {
-			if (stderr) {
-				console.error("error id ", stderr);
-				return res.status(500).json({
-					emotion: "Wait",
-					message: "Error occured",
-					error: stderr,
-				});
-			}
+			// if (stderr) {
+			// 	console.error("error id ", stderr);
+			// 	return res.status(500).json({
+			// 		emotion: "Wait",
+			// 		message: "Error occured",
+			// 		error: stderr,
+			// 	});
+			// }
 			if (stdout) {
+				console.log("op in js",stdout)
 				return res
 					.status(200)
 					.json({ emotion: stdout.slice(0, stdout.length - 2) });
-			} else return res.status(500).json({ emotion: "Server Error" });
+			 } else return res.status(500).json({ emotion: "Server Error" });
 		}
 	);
 });
@@ -87,3 +89,4 @@ app.get("/emotion/:text", (req, res) => {
 app.listen(4000, () => {
 	console.info("Server started on port 4000");
 });
+// Song-Recommendation-System
