@@ -1,0 +1,116 @@
+.home {
+  width: 100vw;
+  height: fit-content;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: lighten;
+  background-color: rgba(255, 255, 255, 0.65);
+  background-attachment: fixed;
+}
+.home section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  position: relative;
+}
+.home section button.cta {
+  width: fit-content;
+  height: fit-content;
+  all: unset;
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1.125rem 1.75rem;
+  border-radius: 500px;
+  background-color: #fff;
+  color: var(--green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.35rem;
+  line-height: 1.75rem;
+  box-shadow: var(--shadow-elevation-4dp);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.home section button.cta:hover, .home section button.cta:active, .home section button.cta:focus {
+  background-color: rgba(255, 255, 255, 0.8666666667);
+}
+.home section button.cta .material-symbols-outlined {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.home-hero, .home-how, .home-text, .home-music {
+  padding: 0 2rem;
+}
+.home-hero-content, .home-how-content, .home-text-content, .home-music-content {
+  width: 80%;
+  font-size: 2.75rem;
+  line-height: 6rem;
+  color: var(--brown);
+  margin: 0 auto 0 2rem;
+}
+.home-hero-content h1, .home-how-content h1, .home-text-content h1, .home-music-content h1 {
+  font-size: 4.75rem;
+  line-height: 6rem;
+  font-weight: 700;
+  color: var(--brown-700);
+  margin: 1rem 0;
+}
+.home-hero-content h3, .home-how-content h3, .home-text-content h3, .home-music-content h3 {
+  font-size: 3.5rem;
+  line-height: 4rem;
+  font-weight: 500;
+  color: var(--blue-700);
+}
+.home-hero-content p, .home-how-content p, .home-text-content p, .home-music-content p {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+  color: var(--indigo-700);
+  margin: 1rem 0;
+}
+.home-hero-content textarea, .home-how-content textarea, .home-text-content textarea, .home-music-content textarea {
+  all: unset;
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  margin: 0 auto;
+  padding: 0.6rem 0.5rem;
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--back-shadow);
+  transition: all 0.25s ease-in-out;
+  font-size: 2rem;
+}
+.home-hero-content textarea:hover, .home-how-content textarea:hover, .home-text-content textarea:hover, .home-music-content textarea:hover {
+  border-bottom: 2px solid var(--back-shadow);
+}
+.home-hero-content textarea:active, .home-hero-content textarea:focus, .home-how-content textarea:active, .home-how-content textarea:focus, .home-text-content textarea:active, .home-text-content textarea:focus, .home-music-content textarea:active, .home-music-content textarea:focus {
+  border-bottom: 2px solid var(--accent-color);
+}
+.home-hero-content textarea:active + label, .home-hero-content textarea:focus + label, .home-how-content textarea:active + label, .home-how-content textarea:focus + label, .home-text-content textarea:active + label, .home-text-content textarea:focus + label, .home-music-content textarea:active + label, .home-music-content textarea:focus + label {
+  color: var(--brown-700);
+}
+.home-hero-content textarea:disabled, .home-hero-content textarea:disabled:active, .home-hero-content textarea:disabled:focus, .home-how-content textarea:disabled, .home-how-content textarea:disabled:active, .home-how-content textarea:disabled:focus, .home-text-content textarea:disabled, .home-text-content textarea:disabled:active, .home-text-content textarea:disabled:focus, .home-music-content textarea:disabled, .home-music-content textarea:disabled:active, .home-music-content textarea:disabled:focus {
+  border-bottom: 2px solid var(--transparent);
+}
+.home-music {
+  height: fit-content !important;
+  padding: 0;
+  justify-content: flex-start !important;
+}
+.home-music-content {
+  width: 100%;
+  margin: 0 2rem;
+}
+.home-music-content h1 {
+  padding: 1rem 1.75rem;
+}
+
+/*# sourceMappingURL=home.css.map */

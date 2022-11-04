@@ -1,0 +1,140 @@
+.home {
+    width: 100vw;
+    height: fit-content;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: lighten;
+    background-color: rgba(255, 255, 255, 0.65);
+    background-attachment: fixed;
+
+    section {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column;
+        position: relative;
+
+        button.cta {
+            width: fit-content;
+            height: fit-content;
+            all: unset;
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 1.125rem 1.75rem;
+            border-radius: 500px;
+            background-color: #fff;
+            color: var(--green);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.35rem;
+            line-height: 1.75rem;
+            box-shadow: var(--shadow-elevation-4dp);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease-in-out;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: #ffffffdd;
+            }
+
+            .material-symbols-outlined {
+                font-size: 1.5rem;
+                margin-right: 0.5rem;
+            }
+        }
+    }
+
+    &-hero,
+    &-how,
+    &-text,
+    &-music {
+        padding: 0 2rem;
+
+        &-content {
+            width: 80%;
+            font-size: 2.75rem;
+            line-height: 6rem;
+            color: var(--brown);
+            margin: 0 auto 0 2rem;
+
+            h1 {
+                font-size: 4.75rem;
+                line-height: 6rem;
+                font-weight: 700;
+                color: var(--brown-700);
+                margin: 1rem 0;
+            }
+
+            h3 {
+                font-size: 3.5rem;
+                line-height: 4rem;
+                font-weight: 500;
+                color: var(--blue-700);
+            }
+
+            p {
+                font-size: 2rem;
+                line-height: 2.5rem;
+                font-weight: 400;
+                color: var(--indigo-700);
+                margin: 1rem 0;
+            }
+
+            textarea {
+                all: unset;
+                width: 100%;
+                height: 50vh;
+                position: relative;
+                margin: 0 auto;
+                padding: 0.6rem 0.5rem;
+                color: var(--accent-color);
+                border-bottom: 2px solid var(--back-shadow);
+                transition: all 0.25s ease-in-out;
+                font-size: 2rem;
+
+                &:hover {
+                    border-bottom: 2px solid var(--back-shadow);
+                }
+
+                &:active,
+                &:focus {
+                    border-bottom: 2px solid var(--accent-color);
+
+                    &+label {
+                        color: var(--brown-700);
+                    }
+                }
+
+                &:disabled,
+                &:disabled:active,
+                &:disabled:focus {
+                    border-bottom: 2px solid var(--transparent);
+                }
+            }
+        }
+
+    }
+
+    &-music {
+        height: fit-content !important;
+        padding: 0;
+        justify-content: flex-start !important;
+
+        &-content {
+            width: 100%;
+            margin: 0 2rem;
+
+            h1 {
+                padding: 1rem 1.75rem;
+            }
+        }
+    }
+}
