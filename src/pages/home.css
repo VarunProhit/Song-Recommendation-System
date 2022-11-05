@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .home {
   width: 100vw;
   height: fit-content;
@@ -119,6 +120,75 @@
 .home-music-content h1 {
   padding: 1rem 1.75rem;
 }
+.home-music-content h3 {
+  font-size: 2.75rem;
+  line-height: 3.5rem;
+  padding: 0 2rem;
+}
+.home-music-quote {
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+}
+.home-music-quote .blockquote {
+  padding: 60px 80px 40px;
+  position: relative;
+}
+.home-music-quote .blockquote p {
+  font-family: "Utopia-italic";
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+}
+.home-music-quote .blockquote:before {
+  position: absolute;
+  font-family: "FontAwesome";
+  top: 0;
+  content: "\f10d";
+  font-size: 150px;
+  color: rgba(0, 0, 0, 0.1);
+}
+.home-music-quote .blockquote::after {
+  content: "";
+  top: 20px;
+  left: 50%;
+  margin-left: -100px;
+  position: absolute;
+  border-bottom: 3px solid #bf0024;
+  height: 3px;
+  width: 200px;
+}
+.home-music-quote .otro-blockquote {
+  font-size: 1.5rem;
+  width: 60%;
+  margin: 50px auto;
+  font-family: Open Sans;
+  font-style: italic;
+  color: #555555;
+  padding: 1.2em 30px 1.2em 75px;
+  border-left: 8px solid #78C0A8;
+  line-height: 1.6;
+  position: relative;
+  background: #EDEDED;
+}
+.home-music-quote .otro-blockquote::before {
+  font-family: Arial;
+  content: "“";
+  color: #78C0A8;
+  font-size: 3em;
+  position: absolute;
+  left: 10px;
+  top: -10px;
+}
+.home-music-quote .otro-blockquote::after {
+  content: "";
+}
+.home-music-quote .otro-blockquote span {
+  color: #333333;
+  font-style: normal;
+  font-size: 2rem;
+  line-height: 3.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0.5rem 0.5rem auto;
+}
 .home-music .null {
   width: 20rem;
   height: 25rem;
@@ -138,5 +208,3 @@
   text-align: center;
   margin: 2rem auto;
 }
-
-/*# sourceMappingURL=home.css.map */

@@ -66,7 +66,7 @@ app.get("/emotion/:text", (req, res) => {
 	let formattedText = formatText(text);
 	console.log(formattedText)
 	child.exec(
-		`python server.py --text ${formattedText}`,
+		`python main.py --text ${formattedText}`,
 		(error, stdout, stderr) => {
 			// if (stderr) {
 			// 	console.error("error id ", stderr);

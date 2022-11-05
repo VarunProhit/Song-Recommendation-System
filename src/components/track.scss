@@ -1,0 +1,67 @@
+.track {
+    width: 35rem;
+    height: 12.5rem;
+    overflow: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem 0 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    margin: 1rem auto;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.075);
+    }
+
+    &-image {
+        width: 10rem;
+        height: 10rem;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        border-radius: 8px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        background-color: transparent;
+        background-blend-mode: darken;
+
+        & a {
+            opacity: 0;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+
+            & a {
+                opacity: 1;
+            }
+        }
+    }
+
+    &-content {
+        width: calc(100% - 12rem);
+        margin: 0 0.5rem;
+        padding: 1.25rem 0.75rem 0 0.75rem;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-flow: column;
+
+        & * {
+            white-space: nowrap;
+        }
+    }
+
+    &-name {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    &-artist {
+        font-size: 1.25rem;
+        line-height: 2rem;
+    }
+}

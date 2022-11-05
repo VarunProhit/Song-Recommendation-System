@@ -12,6 +12,7 @@ import {
 	clientId,
 	emotions,
 	genresCollection,
+	getQuoteForEmotion,
 	paperQuotesToken,
 } from "../constants";
 import { wallpaper, textWallpaper } from "../images";
@@ -30,6 +31,7 @@ const Dashboard = ({ code }) => {
 	const [playingTrack, setPlayingTrack] = useState();
 	const [activeScreen, setActiveScreen] = useState(1);
 	const [quote, setQuote] = useState("");
+	const [quoteAuthor, setQuoteAuthor] = useState("");
 
 	const playTrack = (track) => {
 		setPlayingTrack(track);
@@ -83,9 +85,15 @@ const Dashboard = ({ code }) => {
 					},
 				}
 			);
-			return res?.data?.results[0]?.quote;
+			console.log(res);
+			if (res.status === 200) {
+				setQuoteAuthor(res?.data?.results[0]?.author);
+				return res?.data?.results[0]?.quote;
+			}
+			return "";
 		} catch (error) {
-			return error?.response?.data;
+			console.error(error);
+			return "";
 		}
 	};
 
@@ -230,18 +238,22 @@ const Dashboard = ({ code }) => {
 									Here's what we found for you
 								</h1>
 							)}
+							{
+								<h3 data-aos="fade-left">
+									{getQuoteForEmotion(genre)}
+								</h3>
+							}
 							{genre !== "" && quote !== "" && (
 								<div className="home-music-quote">
-									<p>
-										{`"${quote}"`}
-										<br />
-									</p>
+									<blockquote className="otro-blockquote">
+										<p>{quote}</p>
+										<span>
+											{quoteAuthor !== ""
+												? quoteAuthor
+												: "Unknown"}
+										</span>
+									</blockquote>
 								</div>
-							)}
-							{genre !== "" && (
-								<h3 data-aos="fade-left">
-									{genre} music for you
-								</h3>
 							)}
 							<div className="home-music-tracks">
 								{genre === "" ? (

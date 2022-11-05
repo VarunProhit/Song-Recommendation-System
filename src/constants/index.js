@@ -160,3 +160,22 @@ export const genresCollection = new Map([
 		],
 	],
 ]);
+
+export const getQuoteForEmotion = (emotion) => {
+	switch (emotion) {
+		case "joy":
+			return "You are happy! Keep it up!";
+		case "sadness":
+			return "I'm sorry you are sad, here are some songs to cheer you up";
+		case "anger":
+			return "Oh you're angry? Here's something to calm your nerves";
+		case "fear":
+			return "You are afraid? Here's something to make you feel better";
+		case "surprise":
+			return "You are surprised? Here's something that might surprise you even more";
+		case "love":
+			return "Oh you are in love... Let's listen to some love songs";
+		default:
+			return "I'm sorry, I don't know what to say";
+	}
+};

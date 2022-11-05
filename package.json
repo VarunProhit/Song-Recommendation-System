@@ -25,7 +25,7 @@
     "eject": "react-scripts eject",
     "server": "nodemon server.mjs",
     "start": "node server.mjs",
-    "sass": "sass src/style.scss:src/style.css src/pages/login.scss:src/pages/login.css src/pages/dashboard.scss:src/pages/dashboard.css src/pages/home.scss:src/pages/home.css -w"
+    "sass": "sass --no-source-map src/style.scss:src/style.css src/pages/login.scss:src/pages/login.css src/pages/dashboard.scss:src/pages/dashboard.css src/pages/home.scss:src/pages/home.css src/components/track.scss:src/components/track.css -w"
   },
   "eslintConfig": {
     "extends": [
