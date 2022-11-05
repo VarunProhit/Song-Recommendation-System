@@ -49,6 +49,11 @@
 .home-hero, .home-how, .home-text, .home-music {
   padding: 0 2rem;
 }
+.home-hero button.go-back, .home-how button.go-back, .home-text button.go-back, .home-music button.go-back {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
 .home-hero-content, .home-how-content, .home-text-content, .home-music-content {
   width: 80%;
   font-size: 2.75rem;
@@ -102,15 +107,36 @@
 }
 .home-music {
   height: fit-content !important;
+  min-height: 100vh;
   padding: 0;
   justify-content: flex-start !important;
+  position: relative;
 }
 .home-music-content {
   width: 100%;
-  margin: 0 2rem;
+  margin: 5rem 2rem;
 }
 .home-music-content h1 {
   padding: 1rem 1.75rem;
+}
+.home-music .null {
+  width: 20rem;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+.home-music .null img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+.home-music .null h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  text-align: center;
+  margin: 2rem auto;
 }
 
 /*# sourceMappingURL=home.css.map */

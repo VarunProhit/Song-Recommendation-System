@@ -58,6 +58,13 @@
     &-music {
         padding: 0 2rem;
 
+
+        button.go-back {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+        }
+
         &-content {
             width: 80%;
             font-size: 2.75rem;
@@ -125,15 +132,39 @@
 
     &-music {
         height: fit-content !important;
+        min-height: 100vh;
         padding: 0;
         justify-content: flex-start !important;
+        position: relative;
 
         &-content {
             width: 100%;
-            margin: 0 2rem;
+            margin: 5rem 2rem;
 
             h1 {
                 padding: 1rem 1.75rem;
+            }
+        }
+
+        .null {
+            width: 20rem;
+            height: 25rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: auto;
+            }
+
+            h1 {
+                font-size: 2rem;
+                line-height: 2.5rem;
+                text-align: center;
+                margin: 2rem auto;
             }
         }
     }

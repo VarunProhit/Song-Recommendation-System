@@ -8,7 +8,12 @@ import MaterialIcons from "../components/MaterialIcons";
 import empty from "../images/empty.svg";
 import emptyCart from "../images/empty-cart.svg";
 import { randomize } from "../utils";
-import { clientId, emotions, genresCollection } from "../constants";
+import {
+	clientId,
+	emotions,
+	genresCollection,
+	paperQuotesToken,
+} from "../constants";
 import { wallpaper, textWallpaper } from "../images";
 import "./dashboard.css";
 import "./home.css";
@@ -24,6 +29,7 @@ const Dashboard = ({ code }) => {
 	const [tracks, setTracks] = useState([]);
 	const [playingTrack, setPlayingTrack] = useState();
 	const [activeScreen, setActiveScreen] = useState(1);
+	const [quote, setQuote] = useState("");
 
 	const playTrack = (track) => {
 		setPlayingTrack(track);
@@ -65,6 +71,24 @@ const Dashboard = ({ code }) => {
 		}
 	};
 
+	const getQuoteByGenre = async (genre) => {
+		if (!emotions.includes(genre)) return "";
+		try {
+			const res = await axios.get(
+				`https://api.paperquotes.com/quotes/?tags=${genre}&language=en`,
+				{
+					headers: {
+						Authorization: `Token ${paperQuotesToken}`,
+						"Content-Type": "application/json",
+					},
+				}
+			);
+			return res?.data?.results[0]?.quote;
+		} catch (error) {
+			return error?.response?.data;
+		}
+	};
+
 	useEffect(() => {
 		if (!accessToken) return;
 		spotifyApi.setAccessToken(accessToken);
@@ -73,11 +97,12 @@ const Dashboard = ({ code }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		console.log(aboutToday);
-		// const randomGenre = emotions[randomize(0, emotions.length)];
 		try {
 			const emotion = await getEmotionByText(aboutToday);
 			console.log("handleSubmit emotion", emotion);
 			const res = await getTracksByGenre(emotion);
+			const fetchQuote = await getQuoteByGenre(emotion);
+			setQuote(() => fetchQuote);
 			if (res?.length === 0) return setTracks(() => []);
 			else {
 				const tracksToSet = res.map((track) => {
@@ -155,6 +180,12 @@ const Dashboard = ({ code }) => {
 			{activeScreen === 2 && (
 				<>
 					<section className="home-text">
+						<button
+							className="icon icon-lg go-back"
+							onClick={() => setActiveScreen(() => 1)}
+						>
+							<MaterialIcons>arrow_back</MaterialIcons>
+						</button>
 						<div className="home-text-content">
 							<h1 data-aos="fade-left">
 								How are you feeling today?
@@ -187,11 +218,30 @@ const Dashboard = ({ code }) => {
 			{activeScreen === 3 && (
 				<>
 					<section className="home-music">
+						<button
+							className="icon icon-lg go-back"
+							onClick={() => setActiveScreen(() => 2)}
+						>
+							<MaterialIcons>arrow_back</MaterialIcons>
+						</button>
 						<div className="home-music-content">
 							{genre !== "" && (
 								<h1 data-aos="fade-left">
 									Here's what we found for you
 								</h1>
+							)}
+							{genre !== "" && quote !== "" && (
+								<div className="home-music-quote">
+									<p>
+										{`"${quote}"`}
+										<br />
+									</p>
+								</div>
+							)}
+							{genre !== "" && (
+								<h3 data-aos="fade-left">
+									{genre} music for you
+								</h3>
 							)}
 							<div className="home-music-tracks">
 								{genre === "" ? (
