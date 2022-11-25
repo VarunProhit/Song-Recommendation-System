@@ -1,6 +1,6 @@
 import React from "react";
 import { AUTH_URL } from "../constants";
-import "./login.css";
+import "./login.scss";
 import logo from "../images/logo.gif";
 
 const Login = () => {

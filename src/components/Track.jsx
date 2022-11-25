@@ -1,10 +1,10 @@
 import React from "react";
 import MaterialIcons from "./MaterialIcons";
-import "./track.css";
+import "./track.scss";
 
-const Track = ({ track, playTrack }) => {
+const Track = ({ track, playTrack, playingTrack }) => {
 	const handlePlay = () => {
-		playTrack(track)
+		playTrack(track);
 	};
 	return (
 		<div className="track" onClick={handlePlay}>
@@ -26,7 +26,11 @@ const Track = ({ track, playTrack }) => {
 						<MaterialIcons>skip_previous</MaterialIcons>
 					</button>
 					<button className="icon btn-green">
-						<MaterialIcons>play_arrow</MaterialIcons>
+						<MaterialIcons>
+							{playingTrack?.uri === track?.uri
+								? "pause"
+								: "play_arrow"}
+						</MaterialIcons>
 					</button>
 					<button className="icon">
 						<MaterialIcons>skip_next</MaterialIcons>

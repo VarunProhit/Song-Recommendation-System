@@ -8,6 +8,8 @@ import MaterialIcons from "../components/MaterialIcons";
 import empty from "../images/empty.svg";
 import emptyCart from "../images/empty-cart.svg";
 import { randomize } from "../utils";
+import "./dashboard.scss";
+import "./home.scss";
 import {
 	clientId,
 	emotions,
@@ -16,8 +18,6 @@ import {
 	paperQuotesToken,
 } from "../constants";
 import { wallpaper, textWallpaper } from "../images";
-import "./dashboard.css";
-import "./home.css";
 
 const spotifyApi = new SpotifyWebApi({
 	clientId: clientId,
@@ -169,7 +169,14 @@ const Dashboard = ({ code }) => {
 					<section className="home-how">
 						<div className="home-how-content">
 							<h1>How it works?</h1>
-							<p>
+							<p
+								style={{
+									fontSize: "3.5rem",
+									lineHeight: "4rem",
+									fontWeight: "500",
+									color: "var(--blue-700)",
+								}}
+							>
 								Tell us about your day what are you feeling
 								right now and get the best music recommendations
 								right at your fingertips.
@@ -274,14 +281,19 @@ const Dashboard = ({ code }) => {
 														track={track}
 														key={id}
 														playTrack={playTrack}
+														playingTrack={
+															playingTrack
+														}
 													/>
 												))}
 											</div>
 										</div>
-										<Player
-											accessToken={accessToken}
-											trackUri={playingTrack?.uri}
-										/>
+										<div className="home-player">
+											<Player
+												accessToken={accessToken}
+												trackUri={playingTrack?.uri}
+											/>
+										</div>
 									</>
 								) : (
 									<>

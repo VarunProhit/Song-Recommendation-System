@@ -87,14 +87,6 @@
                 color: var(--blue-700);
             }
 
-            p {
-                font-size: 2rem;
-                line-height: 2.5rem;
-                font-weight: 400;
-                color: var(--indigo-700);
-                margin: 1rem 0;
-            }
-
             textarea {
                 all: unset;
                 width: 100%;
@@ -139,7 +131,7 @@
 
         &-content {
             width: 100%;
-            margin: 5rem 2rem;
+            margin: 5rem 2rem 0 2rem;
 
             h1 {
                 padding: 1rem 1.75rem;
@@ -249,5 +241,14 @@
                 margin: 2rem auto;
             }
         }
+    }
+
+    &-player {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        font-size: initial;
+        line-height: initial;
     }
 }
