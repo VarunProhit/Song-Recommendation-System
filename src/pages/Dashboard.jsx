@@ -36,6 +36,20 @@ const Dashboard = ({ code }) => {
 	const playTrack = (track) => {
 		setPlayingTrack(track);
 	};
+	const playNextTrack = () => {
+		const index = tracks.findIndex(
+			(track) => track.uri === playingTrack.uri
+		);
+		setPlayingTrack(tracks[(index + 1) % tracks.length]);
+	};
+	const playPreviousTrack = () => {
+		const index = tracks.findIndex(
+			(track) => track.uri === playingTrack.uri
+		);
+		setPlayingTrack(
+			index === 0 ? tracks[tracks.length - 1] : tracks[index - 1]
+		);
+	};
 
 	const getEmotionByText = async (text) => {
 		console.log(text);
@@ -240,11 +254,6 @@ const Dashboard = ({ code }) => {
 							<MaterialIcons>arrow_back</MaterialIcons>
 						</button>
 						<div className="home-music-content">
-							{genre !== "" && (
-								<h1 data-aos="fade-left">
-									Here's what we found for you
-								</h1>
-							)}
 							{
 								<h3 data-aos="fade-left">
 									{getQuoteForEmotion(genre)}
@@ -281,6 +290,10 @@ const Dashboard = ({ code }) => {
 														track={track}
 														key={id}
 														playTrack={playTrack}
+														playNext={playNextTrack}
+														playPrev={
+															playPreviousTrack
+														}
 														playingTrack={
 															playingTrack
 														}
