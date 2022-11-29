@@ -76,12 +76,14 @@ app.get("/emotion/:text", (req, res) => {
 			// 		error: stderr,
 			// 	});
 			// }
-			if (stdout) {
+			// if (stdout) {
 				console.log("op in js",stdout)
+				console.error("error id ", error);
+				console.error("error id ", stderr);
 				return res
 					.status(200)
 					.json({ emotion: stdout.slice(0, stdout.length - 2) });
-			 } else return res.status(500).json({ emotion: "Server Error" });
+			//  } else return res.status(500).json({ emotion: "Server Error" });
 		}
 	);
 });
