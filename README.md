@@ -1,4 +1,19 @@
-# Getting Started with Create React App
+# Jazzam:  Sentiment Analysis Model for Song Recommendations
+
+This project presents a sentiment analysis model designed to recommend songs based on the user's current emotional state. The model has been trained using a large dataset of four lakh labelled data points, allowing it to accurately predict sentiment with an impressive 88% accuracy rate.
+
+## Features
+
+- **Sentiment Analysis:** The model utilizes advanced natural language processing techniques to analyze the user's input and determine their current emotional state.
+- **Song Recommendations:** Based on the detected sentiment, the model suggests songs that align with the user's emotions, creating a personalized music experience.
+- **Extensive Training:** The sentiment analysis model has been trained on a massive dataset of four lakh labelled data points, ensuring its ability to accurately predict sentiments across a wide range of emotions.
+
+## User Interface
+
+To enhance usability, we have developed a user-friendly interface that allows users to input their current state of emotion and receive personalized song recommendations. The interface seamlessly integrates with the sentiment analysis model to provide an intuitive and engaging user experience.
+
+We are proud to present this sentiment analysis model and its accompanying interface, aiming to bring a delightful and personalized music experience to users.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
